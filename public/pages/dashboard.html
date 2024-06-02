@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Zgłoszeń</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Zgłoszeń</h1>
+        </header>
+        <form id="filter-form">
+            <fieldset>
+                <legend>Filtry</legend>
+                <label for="start-date">Data początkowa:</label>
+                <input type="date" id="start-date" name="start_date">
+                
+                <label for="end-date">Data końcowa:</label>
+                <input type="date" id="end-date" name="end_date">
+                
+                <label for="category">Kategoria naprawy:</label>
+                <select id="category" name="category">
+                    <option value="">Wszystkie</option>
+                    <option value="Mechanika">Mechanika</option>
+                    <option value="Elektryka">Elektryka</option>
+                    <option value="Diagnostyka">Diagnostyka</option>
+                </select>
+                
+                <button type="button" onclick="filterData()">Filtruj</button>
+            </fieldset>
+        </form>
+
+        <div id="serviceRequestsChartContainer">
+            <canvas id="serviceRequestsChart"></canvas>
+        </div>
+        <div id="categoriesChartContainer">
+            <canvas id="categoriesChart"></canvas>
+        </div>
+        <div id="datesChartContainer">
+            <canvas id="datesChart"></canvas>
+        </div>
+    </div>
+    <script src="/workshop/scripts/dashboard.js"></script>
+</body>
+</html>

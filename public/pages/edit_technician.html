@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edytowanie Technika</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Edytowanie Technika</h1>
+        </header>
+        <form id="edit-technician-form" action="../update_technician.php" method="POST">
+            <input type="hidden" id="technician-id" name="id">
+            <label for="technician-name">Nazwisko:</label>
+            <input type="text" id="technician-name" name="name" required>
+            
+            <label for="technician-specialty">Specjalizacja:</label>
+            <input type="text" id="technician-specialty" name="specialty" required>
+
+            <label for="technican-schedule">Harmonogram pracy:</label>
+            <input type="text" id="technician-schedule" name="schedule" required>
+            
+            <button type="submit">Zapisz zmiany</button>
+        </form>
+    </div>
+    <script src="/workshop/scripts/edit_technician.js"></script>
+
+</body>
+</html>

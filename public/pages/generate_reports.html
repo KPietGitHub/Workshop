@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generowanie Raportów</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Generowanie Raportów</h1>
+        </header>
+        <form id="report-form" action="../generate_report.php" method="POST">
+            <fieldset>
+                <legend>Wybierz zakres dat</legend>
+                <label for="start-date">Data początkowa:</label>
+                <input type="date" id="start-date" name="start_date" required>
+                
+                <label for="end-date">Data końcowa:</label>
+                <input type="date" id="end-date" name="end_date" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Wybierz typ raportu</legend>
+                <label for="report-type">Typ raportu:</label>
+                <select id="report-type" name="report_type">
+                    <option value="service_requests">Zgłoszenia serwisowe</option>
+                    <option value="repairs">Naprawy</option>
+                    <option value="technicians">Wydajność techników</option>
+                    <option value="financial">Raport finansowy</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Wybierz format raportu</legend>
+                <label for="report-format">Format:</label>
+                <select id="report-format" name="report_format">
+                    <option value="pdf">PDF</option>
+                    <option value="csv">CSV</option>
+                </select>
+            </fieldset>
+            
+            <button type="submit">Generuj raport</button>
+        </form>
+    </div>
+</body>
+</html>

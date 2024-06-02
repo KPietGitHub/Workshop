@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przypisywanie Techników</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Przypisywanie Techników do Zgłoszeń Serwisowych</h1>
+        </header>
+        <form id="assign-form" action="../assign_technician.php" method="POST">
+            <fieldset>
+                <legend>Wybierz zgłoszenie serwisowe</legend>
+                <label for="service-request">Zgłoszenie serwisowe:</label>
+                <select id="service-request" name="service_request_id" required>
+                    <!-- Opcje wypełniane przez JavaScript -->
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Wybierz technika</legend>
+                <label for="technician">Technik:</label>
+                <select id="technician" name="technician_id" required>
+                    <!-- Opcje wypełniane przez JavaScript -->
+                </select>
+            </fieldset>
+
+            <button type="submit">Przypisz technika</button>
+        </form>
+    </div>
+    <script src="/workshop/scripts/assign_technicians.js"></script>
+</body>
+</html>

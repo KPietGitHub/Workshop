@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edytowanie Zgłoszenia Serwisowego</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Edytowanie Zgłoszenia Serwisowego</h1>
+        </header>
+        <form id="edit-form" action="/workshop/public/update_service_request.php" method="POST">
+            <input type="hidden" id="request-id" name="id">
+            <fieldset>
+                <legend>Informacje o kliencie</legend>
+                <label for="client-name">Imię i nazwisko:</label>
+                <input type="text" id="client-name" name="client_name" required>
+                
+                <label for="client-phone">Telefon:</label>
+                <input type="tel" id="client-phone" name="client_phone" required>
+                
+                <label for="client-email">Email:</label>
+                <input type="email" id="client-email" name="client_email" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Informacje o pojeździe</legend>
+                <label for="vehicle-make">Marka:</label>
+                <input type="text" id="vehicle-make" name="vehicle_make" required>
+                
+                <label for="vehicle-model">Model:</label>
+                <input type="text" id="vehicle-model" name="vehicle_model" required>
+                
+                <label for="vehicle-year">Rok produkcji:</label>
+                <input type="number" id="vehicle-year" name="vehicle_year" required>
+                
+                <label for="vehicle-license">Numer rejestracyjny:</label>
+                <input type="text" id="vehicle-license" name="vehicle_license" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Opis problemu</legend>
+                <label for="problem-description">Opis:</label>
+                <textarea id="problem-description" name="problem_description" required></textarea>
+                
+                <label for="preferred-date">Preferowany termin naprawy:</label>
+                <input type="date" id="preferred-date" name="preferred_date" required>
+                
+                <label for="category">Kategoria serwisowa:</label>
+                <select id="category" name="category">
+                    <option value="mechanika">Mechanika</option>
+                    <option value="elektryka">Elektryka</option>
+                    <option value="diagnostyka">Diagnostyka</option>
+                </select>
+            </fieldset>
+            
+            <button type="submit">Zapisz zmiany</button>
+        </form>
+    </div>
+    <script src="/workshop/scripts/edit_service_request.js"></script>
+</body>
+</html>

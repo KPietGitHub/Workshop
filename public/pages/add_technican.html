@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowe Zgłoszenie Serwisowe</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dodaj nowego technika</h1>
+        </header>
+        <form action="../add_technican.php" method="POST">
+
+            
+            <fieldset>
+                <legend>Dane technika:</legend>
+                <label for="technican-name">Imię i nazwisko</label>
+                <textarea id="technican-name" name="technican-name" required></textarea>
+                
+                <label for="technican-specialty">Specjalizacja:</label>
+                <input  id="technican-specialty" name="technican-specialty" required>
+
+                <label for="technican-schedule">Harmonogram pracy:</label>
+                <input id="technican-schedule" name="technican-schedule" required>
+            </fieldset>
+            
+            <button type="submit">Dodaj</button>
+        </form>
+    </div>
+</body>
+</html>

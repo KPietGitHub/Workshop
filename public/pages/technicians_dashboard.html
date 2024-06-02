@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Techników</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Techników</h1>
+        </header>
+        <form id="filter-form">
+            <fieldset>
+                <legend>Filtry</legend>
+                <label for="start-date">Data początkowa:</label>
+                <input type="date" id="start-date" name="start_date">
+                
+                <label for="end-date">Data końcowa:</label>
+                <input type="date" id="end-date" name="end_date">
+                
+                <button type="button" onclick="filterData()">Filtruj</button>
+            </fieldset>
+        </form>
+        
+        <canvas id="availabilityChart"></canvas>
+        <canvas id="specializationsChart"></canvas>
+        <canvas id="performanceChart"></canvas>
+        <canvas id="assignmentsChart"></canvas>
+    </div>
+    <script src="/workshop/scripts/technicians_dashboard.js"></script>
+</body>
+</html>

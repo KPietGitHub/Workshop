@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edytuj Naprawę</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Edytuj Naprawę</h1>
+        </header>
+        <form id="edit-repair-form" action="../update_repair.php" method="POST">
+            <input type="hidden" id="repair-id" name="repair_id" required>
+            <fieldset>
+                <legend>Informacje o naprawie</legend>
+                <label for="service-request-id">Zgłoszenie serwisowe:</label>
+                <select id="service-request-id" name="service_request_id" required>
+                    <!-- Opcje wypełniane przez JavaScript -->
+                </select>
+                
+                <label for="description">Opis naprawy:</label>
+                <textarea id="description" name="description" required></textarea>
+                
+                <label for="cost">Koszt:</label>
+                <input type="number" step="0.01" id="cost" name="cost" required>
+                
+                <label for="revenue">Przychód:</label>
+                <input type="number" step="0.01" id="revenue" name="revenue" required>
+            </fieldset>
+            
+            <button type="submit">Zapisz zmiany</button>
+        </form>
+    </div>
+    <script src="/workshop/scripts/edit_repair.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Śledzenie Napraw</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Śledzenie Napraw</h1>
+        </header>
+        <form id="repair-form" action="../submit_repair.php" method="POST">
+            <fieldset>
+                <legend>Informacje o naprawie</legend>
+                <label for="service-request-id">Zgłoszenie serwisowe:</label>
+                <select id="service-request-id" name="service_request_id" required>
+                    <!-- Opcje wypełniane przez JavaScript -->
+                </select>
+                
+                <label for="description">Opis naprawy:</label>
+                <textarea id="description" name="description" required></textarea>
+                
+                <label for="cost">Koszt:</label>
+                <input type="number" step="0.01" id="cost" name="cost" required>
+                
+                <label for="revenue">Przychód:</label>
+                <input type="number" step="0.01" id="revenue" name="revenue" required>
+            </fieldset>
+            
+            <button type="submit">Zapisz naprawę</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Zgłoszenie serwisowe</th>
+                    <th>Opis</th>
+                    <th>Koszt</th>
+                    <th>Przychód</th>
+                    <th>Data</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody id="repairs">
+                <!-- Zawartość wypełniana przez JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="/workshop/scripts/track_repairs.js"></script>
+</body>
+</html>
