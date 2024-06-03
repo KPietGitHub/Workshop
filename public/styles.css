@@ -152,13 +152,39 @@ select:focus {
     outline: none;
 }
 
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 5.5a.5.5 0 0 1 .854-.353L8 11.793l5.646-6.646a.5.5 0 1 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6A.5.5 0 0 1 1.5 5.5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Stylizacja dla wykresów */
 canvas {
     max-width: 100%;
-    height: auto !important;
-    margin: 0 auto;
+    height: 200px; /* Stała wysokość dla wykresów */
+    margin: 20px auto;
     display: block;
 }
 
+#canvas{
+    height: 100px;
+    margin: 10px;
+    display: block;
+}
+
+/* Dodanie stylów dla większych ekranów */
 @media (min-width: 768px) {
     .container {
         padding: 20px 40px;

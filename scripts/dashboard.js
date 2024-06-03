@@ -21,39 +21,15 @@ function filterData() {
     fetchData(startDate, endDate, category);
 }
 
-function resetCanvas(canvasId) {
-    const canvas = document.getElementById(canvasId);
-    const parent = canvas.parentElement;
-    parent.removeChild(canvas);
-
-    const newCanvas = document.createElement('canvas');
-    newCanvas.id = canvasId;
-    parent.appendChild(newCanvas);
-}
-
 function updateCharts(data) {
-    // Ensure existing charts are destroyed before creating new ones
-    if (serviceRequestsChart) {
-        serviceRequestsChart.destroy();
-    }
-    if (categoriesChart) {
-        categoriesChart.destroy();
-    }
-    if (datesChart) {
-        datesChart.destroy();
-    }
+    if (serviceRequestsChart) serviceRequestsChart.destroy();
+    if (categoriesChart) categoriesChart.destroy();
+    if (datesChart) datesChart.destroy();
 
-    // Reset canvases
-    resetCanvas('serviceRequestsChart');
-    resetCanvas('categoriesChart');
-    resetCanvas('datesChart');
-
-    // Get new contexts
     const serviceRequestsChartCtx = document.getElementById('serviceRequestsChart').getContext('2d');
     const categoriesChartCtx = document.getElementById('categoriesChart').getContext('2d');
     const datesChartCtx = document.getElementById('datesChart').getContext('2d');
 
-    // Create new charts
     serviceRequestsChart = new Chart(serviceRequestsChartCtx, {
         type: 'bar',
         data: {
